@@ -15,7 +15,8 @@ function totals(list){
     let totalTime = 0;
 
     for(let a=0; a<list.length; a++){
-      totalValue = 
+      totalValue = list[a]*value+totalValue;
+      totalTime = list[a]*value+totalTime;
     }
 
     return {
@@ -25,9 +26,14 @@ function totals(list){
 
 //works the the same as above, but stops short at the kth number in the list
 function partialTotals(list,k){
+    for(let a=0; a<k.length; a++){
+        totalValue = list[a]*value+totalValue;
+        totalTime = list[a]*value+totalTime;
+      }
 
+      return {
 
-
+      }
 }
 
 //returns a sorted version of the task list from least to greatest according to its time variable
