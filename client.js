@@ -38,16 +38,19 @@ function partialTotals(list,k){
 
 //returns a sorted version of the task list from least to greatest according to its time variable
 function sortTime(list){
-
+  list.(function(a, b)){
     //provide the criteria to sort the tasks.  They are objects remember.
-    return list.sort(/*fill this*/);
+    return list.sort(a.time - b.time/*fill this*/);
+
+  }
 
 }
 
 //returns a sorted version of the task list from least to greatest according to its value variable
 function sortValue(list){
-
-
+  list.(function(a, b)){
+    return list.sort(a.value - b.value);
+  }
 }
 
 //returns a sorted version of the task list from least to greatest according to its impact
