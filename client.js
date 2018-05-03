@@ -15,8 +15,8 @@ function totals(list){
     let totalTime = 0;
 
     for(let a=0; a<list.length; a++){
-      totalValue = list[a]*value+totalValue;
-      totalTime = list[a]*value+totalTime;
+      totalValue = a.value+totalValue;
+      totalTime = a.value+totalTime;
     }
 
     return {
@@ -27,8 +27,9 @@ function totals(list){
 //works the the same as above, but stops short at the kth number in the list
 function partialTotals(list,k){
     for(let a=0; a<k.length; a++){
-        totalValue = list[a]*value+totalValue;
-        totalTime = list[a]*value+totalTime;
+        totalValue = a.value+totalValue;
+        totalTime = a.value+totalTime;
+
       }
 
       return {
@@ -38,9 +39,11 @@ function partialTotals(list,k){
 
 //returns a sorted version of the task list from least to greatest according to its time variable
 function sortTime(list){
-  list.(function(a, b)){
+
     //provide the criteria to sort the tasks.  They are objects remember.
-    return list.sort(a.time - b.time/*fill this*/);
+    return list.sort(function(a, b)){
+      return a.time - b.time
+    };
 
   }
 
@@ -48,9 +51,11 @@ function sortTime(list){
 
 //returns a sorted version of the task list from least to greatest according to its value variable
 function sortValue(list){
-  list.(function(a, b)){
-    return list.sort(a.value - b.value);
-  }
+
+    return list.sort(function(a, b)){
+      return a.value - b.value
+    };
+
 }
 
 //returns a sorted version of the task list from least to greatest according to its impact
@@ -58,11 +63,11 @@ function sortImpact(list){
 
     //create a function which returns the impact of a given task
     function impact(task){
-
+      return task.value/task.time;
     }
 
     //finishes the sort
-    return list.sort(/*fill this*/);
+    return list.sort(function(impact(a)-impact(b)));
 
 }
 
