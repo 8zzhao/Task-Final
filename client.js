@@ -52,9 +52,9 @@ function sortTime(list){
 //returns a sorted version of the task list from least to greatest according to its value variable
 function sortValue(list){
 
-    return list.sort(function(a, b)){
+    return list.sort(function(a, b){
       return a.value - b.value
-    };
+  });
 
 }
 
@@ -67,7 +67,9 @@ function sortImpact(list){
     }
 
     //finishes the sort
-    return list.sort(function(impact(a)-impact(b)));
+    return list.sort(function impact(a, b){
+
+    });
 
 }
 
