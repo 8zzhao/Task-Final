@@ -5,14 +5,14 @@ const TaskExport = function(){
     //returns a task object, similar to pizza
     function createTask(v,t){
         return {
-          value:v;
-          time:t;
+          value:v,
+          time:t
         }
     }
 
     //returns a random integer between 0 and n inclusive
     function rInt(n){
-      let fc = Math.floor(Math.random()*n);
+      let fc = Math.ceil(Math.random()*n);
       return fc;
     }
     //returns a list of task objects.
@@ -22,7 +22,7 @@ const TaskExport = function(){
       let list = [];
 
       for(let a=0; a<n; a++){
-          let t = createTask(rInt(15),rInt(100));
+          let t = createTask(rInt(100),rInt(15));
           list[a]=t;
       }
       return list;

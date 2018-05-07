@@ -15,25 +15,32 @@ function totals(list){
     let totalTime = 0;
 
     for(let a=0; a<list.length; a++){
-      totalValue = a.value+totalValue;
-      totalTime = a.value+totalTime;
+      totalValue = list[a].value+totalValue;
+      totalTime = list[a].value+totalTime;
     }
 
     return {
-
+        totalValue: totalValue,
+        totalTime: totalTime
     }
 }
 
 //works the the same as above, but stops short at the kth number in the list
 function partialTotals(list,k){
-    for(let a=0; a<k.length; a++){
-        totalValue = a.value+totalValue;
-        totalTime = a.value+totalTime;
+    let partialValue = 0;
+    let partialTime = 0;
+
+    if(k < list.length){
+    for(let a=0; a<k; a++){
+        partialValue = list[a].value+partialValue;
+        partialTime = list[a].value+partialTime;
 
       }
+  }
 
       return {
-
+          partialValue: partialValue,
+          partialTime: partialTime
       }
 }
 
@@ -41,17 +48,15 @@ function partialTotals(list,k){
 function sortTime(list){
 
     //provide the criteria to sort the tasks.  They are objects remember.
-    return list.sort(function(a, b)){
+    return list.sort(function(a, b){
       return a.time - b.time
-    };
+  });
 
   }
 
-}
-
 //returns a sorted version of the task list from least to greatest according to its value variable
 function sortValue(list){
-
+1
     return list.sort(function(a, b){
       return a.value - b.value
   });
